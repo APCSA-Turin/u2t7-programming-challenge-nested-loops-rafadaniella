@@ -17,8 +17,18 @@ return the string below for given height=5
 *****  
            */
 public static String starStaircase(int height){
-    return "";
-}
+    String result = "";
+
+        for (int i = 1; i <= height; i++) {
+            for (int j = 0; j < i; j++) {
+                result += "*";
+            }
+            result += "\n";
+        }
+
+        return result;
+    }
+
           /*
 return the string below for given height=5
 *****
@@ -29,8 +39,16 @@ return the string below for given height=5
            */
 
 public static String starStaircaseReverse(int height){
-    return "";
-}
+    String result = "";
+
+        for (int i = height; i >= 1; i--) {
+            for (int j = 0; j < i; j++) {
+                result += "*";
+            }
+            result += "\n";
+        }
+        return result;
+    }
             /*
 
 width=5 height=5
@@ -41,7 +59,20 @@ width=5 height=5
 *****
           */
     public static String emptyBox(int width, int height) {
-        return "";
+        String result = "";
+
+        for (int i = 0; i < height; i++) {
+            for (int j = 0; j < width; j++) {
+                if (i == 0 || i == height - 1 || j == 0 || j == width - 1) {
+                    result += "*";
+                } else {
+                    result += " ";
+                }
+            }
+            result += "\n";
+        }
+
+        return result;
     }
                     /*
 return the string below for word="HELLO" rows=5                    
@@ -54,7 +85,17 @@ OHELL
   i will provide a hint for this one if you get stuck.. use modulo
                 */
     public static String repeatRectangle(String word, int rows){
-        return "";
+        String result = "";
+        int length = word.length();
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < length; j++) {
+                result += word.charAt((i + j) % length);
+            }
+            result += "\n";
+        }
+
+        return result;
     }
 
 }
